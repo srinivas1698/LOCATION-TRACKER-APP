@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity" >
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-24dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/city"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/university"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/university"
+        map:layout_constraintBottom_toBottomOf="@+id/city"
+        map:layout_constraintStart_toEndOf="@+id/city"
+        map:layout_constraintTop_toTopOf="@+id/city"
+        map:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/CS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/cs"
+        map:layout_constraintBottom_toBottomOf="@+id/university"
+        map:layout_constraintStart_toEndOf="@+id/university"
+        map:layout_constraintTop_toTopOf="@+id/university"
+        map:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/uninstall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        android:contentDescription="@string/uninstall"
+        android:focusable="true"
+        android:src="@android:drawable/ic_menu_delete"
+        map:layout_constraintBottom_toTopOf="@+id/location"
+        map:layout_constraintStart_toStartOf="@+id/location" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="28dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:backgroundTint="@color/white"
+        android:src="@android:drawable/ic_menu_mylocation"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/getlocation"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
